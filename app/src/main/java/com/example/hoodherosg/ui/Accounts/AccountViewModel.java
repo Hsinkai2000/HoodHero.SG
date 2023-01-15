@@ -1,16 +1,15 @@
-package com.example.hoodherosg.ui.dashboard;
+package com.example.hoodherosg.ui.Accounts;
 
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
-public class DashboardViewModel extends ViewModel {
-
+public class AccountViewModel extends ViewModel {
     private final MutableLiveData<String> mText;
 
-    public DashboardViewModel() {
+    public AccountViewModel() {
         mText = new MutableLiveData<>();
-        mText.setValue("This is dashboard fragment");
+        mText.setValue("This is home fragment");
     }
 
     public LiveData<String> getText() {
