@@ -12,7 +12,7 @@
         tools:layout="@layout/fragment_home" />
 
     <fragment
-        android:id="@+id/navigation_dashboard"
+        android:id="@+id/navigation_Reports"
         android:name="com.example.hoodherosg.ui.Reports.ReportsFragment"
         android:label="@string/app_name"
         tools:layout="@layout/fragment_reports" />
