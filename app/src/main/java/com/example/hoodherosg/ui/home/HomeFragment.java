@@ -44,23 +44,16 @@ private FragmentHomeBinding binding;
     }
 
     private void initImages(){
-        Drawable drawable = getResources().getDrawable(R.drawable.dummy);
+        Drawable drawable = getResources().getDrawable(R.drawable.car);
 
         ImageUrls.add(drawable);
-        ImageNames.add("Happy Vinayaka");
-        Drawable drawable2 = getResources().getDrawable(R.drawable.events);
+        ImageNames.add("Gantry Missing");
+        Drawable drawable2 = getResources().getDrawable(R.drawable.vending);
         ImageUrls.add(drawable2);
-        ImageNames.add("Restaurants");
-        Drawable drawable3 = getResources().getDrawable(R.drawable.account);
+        ImageNames.add("Machine Malfunction");
+        Drawable drawable3 = getResources().getDrawable(R.drawable.elevator);
         ImageUrls.add(drawable3);
-        ImageNames.add("Hot Dogs");
-
-        Drawable drawable4 = getResources().getDrawable(R.drawable.reports);
-        ImageUrls.add(drawable4);
-        ImageNames.add("Pani Puri");
-
-        ImageUrls.add(drawable);
-        ImageNames.add("KFC Chicken");
+        ImageNames.add("Lift Breakdown");
 
         reportsArrayList.add(new com.example.hoodherosg.ui.Reports.Report("11.12.2022", "Carpark 1A", "Gantry broken at main entrance"));
         reportsArrayList.add(new com.example.hoodherosg.ui.Reports.Report("5.11.2022", "Carpark 2A", "Gantry broken at main entrance"));
