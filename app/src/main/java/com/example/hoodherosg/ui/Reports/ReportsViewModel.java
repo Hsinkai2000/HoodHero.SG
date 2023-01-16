@@ -11,6 +11,7 @@ public class ReportsViewModel extends ViewModel {
     public ReportsViewModel() {
         mText = new MutableLiveData<>();
         mText.setValue("Ongoing Reports");
+
     }
 
     public LiveData<String> getText() {

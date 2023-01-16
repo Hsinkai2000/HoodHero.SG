@@ -24,6 +24,7 @@ private FragmentReportsBinding binding;
 
     private ArrayList<Drawable> ImageUrls = new ArrayList<>();
     private ArrayList<String> ImageNames = new ArrayList<>();
+    private ArrayList<Report> reportsArrayList = new ArrayList<>();
 
     public View onCreateView(@NonNull LayoutInflater inflater,
             ViewGroup container, Bundle savedInstanceState) {
@@ -34,6 +35,7 @@ private FragmentReportsBinding binding;
     View root = binding.getRoot();
         initImages();
         final TextView textView = binding.textReports;
+
         reportsViewModel.getText().observe(getViewLifecycleOwner(), textView::setText);
         return root;
     }
@@ -57,12 +59,27 @@ private FragmentReportsBinding binding;
         ImageUrls.add(drawable);
         ImageNames.add("KFC Chicken");
 
+        reportsArrayList.add(new Report("11.12.2022", "Carpark 1A", "Gantry broken at main entrance"));
+        reportsArrayList.add(new Report("5.11.2022", "Carpark 2A", "Gantry broken at main entrance"));
+        reportsArrayList.add(new Report("4.8.2022", "Carpark 3B", "Gantry broken at main entrance"));
+        reportsArrayList.add(new Report("4.8.2022", "Lift 453", "Up Button not working"));
+        reportsArrayList.add(new Report("2.3.2022", "Lift 182", "Door wont close"));
+        reportsArrayList.add(new Report("1.2.2022", "Carpark 1A", "Gantry broken at main entrance"));
+        initRecyclerpast();
         initRecycler();
     }
     private void initRecycler(){
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getContext(), LinearLayoutManager.HORIZONTAL, false);
         RecyclerView recyclerView = binding.recyclerview;
         RecyclerViewAdapter adapter = new RecyclerViewAdapter(ImageUrls, ImageNames, getContext());
+        recyclerView.setAdapter(adapter);
+        recyclerView.setLayoutManager(linearLayoutManager);
+    }
+
+    private void initRecyclerpast(){
+        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getContext(), LinearLayoutManager.VERTICAL, false);
+        RecyclerView recyclerView = binding.recyclerviewpast;
+        RecyclerViewPastAdapter adapter = new RecyclerViewPastAdapter(reportsArrayList, getContext());
         recyclerView.setAdapter(adapter);
         recyclerView.setLayoutManager(linearLayoutManager);
     }
