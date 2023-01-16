@@ -1,16 +1,16 @@
-package com.example.hoodherosg.ui.home;
+package com.example.hoodherosg.ui.Events;
 
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
-public class HomeViewModel extends ViewModel {
+public class EventsViewModel extends ViewModel {
 
     private final MutableLiveData<String> mText;
 
-    public HomeViewModel() {
+    public EventsViewModel() {
         mText = new MutableLiveData<>();
-        mText.setValue("Nearby Reports");
+        mText.setValue("This is events fragment");
     }
 
     public LiveData<String> getText() {
