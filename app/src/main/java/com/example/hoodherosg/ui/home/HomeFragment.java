@@ -74,7 +74,7 @@ private FragmentHomeBinding binding;
     private void initRecycler(){
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getContext(), LinearLayoutManager.HORIZONTAL, false);
         RecyclerView recyclerView = binding.recyclerviewreports;
-        RecyclerViewAdapter adapter = new RecyclerViewAdapter(ImageUrls, ImageNames, getContext());
+        RecyclerViewReportsAdapter adapter = new RecyclerViewReportsAdapter(ImageUrls, ImageNames, getContext());
         recyclerView.setAdapter(adapter);
         recyclerView.setLayoutManager(linearLayoutManager);
     }

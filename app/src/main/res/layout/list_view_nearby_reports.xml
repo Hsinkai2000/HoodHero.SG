@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     android:id="@+id/parent_layout"
@@ -35,15 +36,20 @@
                 android:fontFamily="sans-serif-condensed"
                 android:text="15 % OFF"/>
 
-            <Button
+            <ImageButton
                 android:id="@+id/btn_upvote"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_alignTop="@id/text"
                 android:layout_alignBottom="@id/text"
-                android:layout_marginLeft="100dp"
-                android:layout_marginRight="20dp"
-                android:background="@drawable/checked" />
+                android:layout_marginLeft="90dp"
+                app:srcCompat="@drawable/checked" />
+
+            <ImageButton
+                android:id="@+id/imageButton2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="90dp"
+                app:srcCompat="@drawable/cancel" />
 
         </RelativeLayout>
     </androidx.cardview.widget.CardView>
