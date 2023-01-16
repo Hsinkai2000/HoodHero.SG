@@ -19,24 +19,23 @@ import com.bumptech.glide.Glide;
 import com.example.hoodherosg.R;
 import com.example.hoodherosg.databinding.FragmentReportsBinding;
 
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 
-public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapter.ViewHolder> {
+public class RecyclerViewPastAdapter extends RecyclerView.Adapter<RecyclerViewPastAdapter.ViewHolder> {
     private static final String TAG = "RecyclerViewAdapter";
 
-    private ArrayList<Drawable> mImages = new ArrayList<>();
-    private ArrayList<String> mNames = new ArrayList<>();
+    private ArrayList<Report> mReports = new ArrayList<>();
     private Context mcontext;
 
-    public RecyclerViewAdapter(ArrayList<Drawable> mImages, ArrayList<String> mNames, Context mcontext) {
-        this.mImages = mImages;
-        this.mNames = mNames;
+    public RecyclerViewPastAdapter(ArrayList<Report> mReports, Context mcontext) {
+        this.mReports = mReports;
         this.mcontext = mcontext;
     }
 
     @Override
     public ViewHolder onCreateViewHolder(ViewGroup parent, final int position) {
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.list_view, parent, false);
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.list_view_past_reports, parent, false);
         ViewHolder holder = new ViewHolder(view);
         return holder;
     }
@@ -44,34 +43,38 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
     @Override
     public void onBindViewHolder(ViewHolder holder, int position) {
         Log.d(TAG, "onBindViewHolder: Images Set");
-        holder.img.setImageDrawable(mImages.get(position));
 
-        holder.txt.setText(mNames.get(position));
-
+        holder.textDate.setText(mReports.get(position).mdate);
+        holder.textTitle.setText(mReports.get(position).mtitle);
+        holder.textDesc.setText(mReports.get(position).mdescription);
         holder.parent_layout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Log.d(TAG, "onClick: Clicked");
-                Toast.makeText(mcontext, mNames.get(position), Toast.LENGTH_SHORT).show();
+                Toast.makeText(mcontext, mReports.get(position).mtitle, Toast.LENGTH_SHORT).show();
             }
         });
     }
 
     @Override
     public int getItemCount() {
-        return mImages.size();
+        return mReports.size();
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder {
         ImageView img;
-        TextView txt;
+        TextView textDate;
+        TextView textTitle;
+        TextView textDesc;
         RelativeLayout parent_layout;
 
 
         public ViewHolder( View itemView) {
             super(itemView);
             img = itemView.findViewById(R.id.image);
-            txt = itemView.findViewById(R.id.text);
+            textDate = itemView.findViewById(R.id.textDate);
+            textTitle = itemView.findViewById(R.id.textTitle);
+            textDesc = itemView.findViewById(R.id.textDesc);
             parent_layout = itemView.findViewById(R.id.parent_layout);
         }
     }

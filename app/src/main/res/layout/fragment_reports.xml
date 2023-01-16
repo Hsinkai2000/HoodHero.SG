@@ -7,10 +7,25 @@
     android:layout_height="match_parent"
     tools:context=".ui.Reports.ReportsFragment" >
 
+<!--    <ImageView-->
+<!--        android:scaleType="fitXY"-->
+<!--        android:layout_marginLeft="-30sp"-->
+<!--        android:layout_marginRight="-30sp"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="110sp"-->
+<!--        android:src="@drawable/bottom_rounded"-->
+<!--        app:layout_constraintBottom_toBottomOf="parent"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintHorizontal_bias="0.0"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toTopOf="parent"-->
+<!--        app:layout_constraintVertical_bias="0.0"></ImageView>-->
+
     <TextView
         android:id="@+id/text_reports"
+        android:text="ongoing reports"
         android:layout_width="match_parent"
-        android:layout_height="0dp"
+        android:layout_height="wrap_content"
         android:textSize="13sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -19,7 +34,7 @@
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerview"
         android:layout_width="match_parent"
-        android:layout_height="300dp"
+        android:layout_height="wrap_content"
         android:layout_marginTop="15dp"
         android:orientation="horizontal"
         app:layout_constraintEnd_toEndOf="parent"
@@ -27,13 +42,39 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/text_reports"></androidx.recyclerview.widget.RecyclerView>
 
-    <Button
-        android:layout_width="160sp"
-        android:layout_height="100sp"
-        android:layout_marginTop="28dp"
-        android:background="@drawable/button"
+    <TextView
+        android:id="@+id/text_past_reports"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:text="Past Reports"
+        android:textSize="13sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/recyclerview"></Button>
+        app:layout_constraintTop_toBottomOf="@+id/recyclerview" />
+
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerviewpast"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="15dp"
+        android:orientation="vertical"
+        app:layout_constraintTop_toBottomOf="@+id/text_past_reports"
+        app:layout_constraintBottom_toBottomOf="parent"></androidx.recyclerview.widget.RecyclerView>
+
+
+    <Button
+        android:id="@+id/button"
+        android:text="MAKE REPORT"
+        android:textColor="@color/white"
+
+        android:layout_width="328dp"
+        android:layout_height="42dp"
+        android:layout_marginBottom="16dp"
+        android:background="@drawable/button"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.493"
+        app:layout_constraintStart_toStartOf="parent"></Button>
 </androidx.constraintlayout.widget.ConstraintLayout>
