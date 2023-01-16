@@ -19,7 +19,7 @@
 
     <fragment
         android:id="@+id/navigation_events"
-        android:name="com.example.hoodherosg.ui.Reports.ReportsFragment"
+        android:name="com.example.hoodherosg.ui.Events.EventsFragment"
         android:label="@string/app_name"
         tools:layout="@layout/fragment_events" />
 
