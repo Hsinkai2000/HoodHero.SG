@@ -11,14 +11,12 @@
         <activity
             android:name=".LandingPage"
             android:exported="true"
-            android:theme="@style/Theme.HoodHeroSG.noactionbar">
-
-        </activity>
+            android:theme="@style/Theme.HoodHeroSG.noactionbar"></activity>
         <activity
-            android:theme="@style/Theme.HoodHeroSG"
             android:name=".MainActivity"
             android:exported="true"
-            android:label="@string/app_name">
+            android:label="@string/app_name"
+            android:theme="@style/Theme.HoodHeroSG">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

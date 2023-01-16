@@ -1,13 +1,16 @@
 package com.example.hoodherosg.ui.Reports;
 
+import android.app.FragmentManager;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentTransaction;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -35,9 +38,24 @@ private FragmentReportsBinding binding;
     View root = binding.getRoot();
         initImages();
         final TextView textView = binding.textReports;
+        final Button makeReport = binding.button;
+
+        makeReport.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                FragmentTransaction fragmentTransaction = getFragmentManager().beginTransaction();
+                fragmentTransaction.replace(R.id.nav_host_fragment_activity_main, new MakeReportFragment());
+                fragmentTransaction.addToBackStack("Back");
+                fragmentTransaction.commit();
+            }
+        });
 
         reportsViewModel.getText().observe(getViewLifecycleOwner(), textView::setText);
         return root;
+    }
+
+    private void goToMakeReport(){
+
     }
 
     private void initImages(){
